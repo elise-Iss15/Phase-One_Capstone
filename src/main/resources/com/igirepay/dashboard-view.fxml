@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+
+<VBox spacing="10.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.igirepay.controller.DashboardController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+    <padding>
+        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
+    </padding>
+
+    <Label fx:id="customerNameLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <Label fx:id="accountInfoLabel"/>
+    <Label fx:id="balanceLabel" style="-fx-font-size: 16px;"/>
+
+    <Label text="Amount (RWF)"/>
+    <TextField fx:id="amountField" promptText="e.g. 5000"/>
+
+    <Label text="Reference (optional)"/>
+    <TextField fx:id="referenceField" promptText="e.g. school-fees"/>
+
+    <HBox spacing="8.0">
+        <Button text="Deposit" onAction="#handleDeposit"/>
+        <Button text="Withdraw" onAction="#handleWithdraw"/>
+    </HBox>
+
+    <Label text="Transfer to account number"/>
+    <TextField fx:id="toAccountField" promptText="e.g. 3"/>
+    <Button text="Transfer" onAction="#onTransferClick"/>
+
+    <Label text="Recent transactions"/>
+    <ListView fx:id="historyList" prefHeight="160.0"/>
+
+    <Button text="Logout" onAction="#onLogoutClick"/>
+</VBox>

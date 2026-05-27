@@ -1,0 +1,205 @@
+/* =====================================================
+   IgirePay Dashboard — dashboard.css
+   Load via: scene.getStylesheets().add(
+       getClass().getResource("/css/dashboard.css").toExternalForm());
+   ===================================================== */
+
+/* ── Root / Scene ─────────────────────────────────── */
+.root {
+    -fx-background-color: #EEEDFE;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 14px;
+
+    /* Brand palette — purple */
+    -brand-dark:   #534AB7;
+    -brand-mid:    #7F77DD;
+    -brand-light:  #CECBF6;
+    -surface:      #FFFFFF;
+    -border:       rgba(83, 74, 183, 0.18);
+    -text-primary: #1A1A1A;
+    -text-muted:   #6B6B6B;
+    -debit-color:  #A32D2D;
+    -credit-color: #3C3489;
+}
+
+/* ── Top-level VBox (the scene root) ──────────────── */
+VBox {
+    -fx-background-color: #EEEDFE;
+}
+
+/* ── All Labels ───────────────────────────────────── */
+Label {
+    -fx-font-size: 13px;
+    -fx-text-fill: -text-primary;
+}
+
+/* ── Customer name (fx:id="customerNameLabel") ────── */
+#customerNameLabel {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -brand-dark;
+}
+
+/* ── Account info line ────────────────────────────── */
+#accountInfoLabel {
+    -fx-font-size: 12px;
+    -fx-text-fill: -text-muted;
+}
+
+/* ── Balance label ────────────────────────────────── */
+#balanceLabel {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: -brand-dark;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px 16px;
+}
+
+/* ── Text fields ──────────────────────────────────── */
+TextField {
+    -fx-background-color: -surface;
+    -fx-border-color: -border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 9px 12px;
+    -fx-font-size: 14px;
+    -fx-text-fill: -text-primary;
+    -fx-prompt-text-fill: #ABABAB;
+}
+
+TextField:focused {
+    -fx-border-color: -brand-mid;
+    -fx-border-width: 1.5px;
+    -fx-effect: dropshadow(gaussian, rgba(127,119,221,0.30), 6, 0, 0, 0);
+}
+
+/* ── All Buttons (base) ───────────────────────────── */
+Button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px 20px;
+}
+
+/* Deposit button — solid primary */
+Button[text="Deposit"] {
+    -fx-background-color: -brand-dark;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+Button[text="Deposit"]:hover {
+    -fx-background-color: -brand-mid;
+}
+
+Button[text="Deposit"]:pressed {
+    -fx-background-color: #3C3489;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Withdraw button — outline style */
+Button[text="Withdraw"] {
+    -fx-background-color: transparent;
+    -fx-text-fill: -brand-dark;
+    -fx-border-color: -brand-dark;
+    -fx-border-width: 1.5px;
+}
+
+Button[text="Withdraw"]:hover {
+    -fx-background-color: -brand-light;
+}
+
+Button[text="Withdraw"]:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Transfer button — solid primary */
+Button[text="Transfer"] {
+    -fx-background-color: -brand-dark;
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+Button[text="Transfer"]:hover {
+    -fx-background-color: -brand-mid;
+}
+
+Button[text="Transfer"]:pressed {
+    -fx-background-color: #3C3489;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* Logout — ghost / muted */
+Button[text="Logout"] {
+    -fx-background-color: transparent;
+    -fx-text-fill: -brand-dark;
+    -fx-border-color: -brand-dark;
+    -fx-border-width: 1.5px;
+    -fx-font-weight: bold;
+}
+
+Button[text="Logout"]:hover {
+    -fx-background-color: -brand-light;
+    -fx-text-fill: -brand-dark;
+}
+
+/* ── ListView (transaction history) ──────────────── */
+ListView {
+    -fx-background-color: -surface;
+    -fx-border-color: -border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 0;
+}
+
+ListView .list-cell {
+    -fx-background-color: -surface;
+    -fx-text-fill: -text-primary;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 14px;
+    -fx-border-color: transparent transparent rgba(83,74,183,0.10) transparent;
+    -fx-border-width: 0 0 0.5px 0;
+}
+
+ListView .list-cell:filled:hover {
+    -fx-background-color: #EEEDFE;
+    -fx-text-fill: -brand-dark;
+}
+
+ListView .list-cell:filled:selected {
+    -fx-background-color: -brand-light;
+    -fx-text-fill: -brand-dark;
+}
+
+/* ── HBox (action button row) ─────────────────────── */
+HBox {
+    -fx-alignment: center-left;
+}
+
+/* ── Scrollbar — minimal ──────────────────────────── */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: -brand-light;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: -brand-mid;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
