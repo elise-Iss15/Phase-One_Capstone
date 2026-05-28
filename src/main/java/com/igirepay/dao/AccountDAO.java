@@ -5,7 +5,6 @@ import com.igirepay.model.Account;
 import com.igirepay.model.AccountType;
 import com.igirepay.model.SavingsAccount;
 import com.igirepay.model.WalletAccount;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -131,6 +130,8 @@ public class AccountDAO {
         if (type == AccountType.WALLET) {
             return new WalletAccount(id, customerId, balance, pin, createdAt);
         }
+
+
         return new SavingsAccount(id, customerId, balance, pin, createdAt);
     }
 }

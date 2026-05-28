@@ -1,17 +1,16 @@
 package com.igirepay.model;
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Account {
-
     private long id;
     private long customerId;
     private double balance;
     private int pin;
     private LocalDateTime createdAt;
     private final List<Transaction> transactionHistory = new ArrayList<>();
+
 
     protected Account() {
         this.balance = 0.00;

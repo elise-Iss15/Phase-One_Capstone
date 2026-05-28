@@ -1,5 +1,4 @@
 package com.igirepay.service;
-
 import com.igirepay.model.Account;
 import com.igirepay.model.AccountType;
 import com.igirepay.model.Customer;
@@ -7,7 +6,6 @@ import com.igirepay.model.SavingsAccount;
 import com.igirepay.model.Transaction;
 import com.igirepay.model.TransactionType;
 import com.igirepay.model.WalletAccount;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

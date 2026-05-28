@@ -1,5 +1,4 @@
 package com.igirepay.model;
-
 import java.util.ArrayList;
 import java.util.List;
 

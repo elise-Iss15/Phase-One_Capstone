@@ -1,8 +1,6 @@
 package com.igirepay.model;
-
 import com.igirepay.exception.InsufficientBalanceException;
 import com.igirepay.exception.InvalidAmountException;
-
 import java.time.LocalDateTime;
 
 public class WalletAccount extends Account {
