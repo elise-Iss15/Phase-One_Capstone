@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 public class TransactionDAO {
-
     public Transaction create(Transaction transaction) throws SQLException {
         String sql = """
                 INSERT INTO transactions (account_id, reference_id, transaction_type, amount)

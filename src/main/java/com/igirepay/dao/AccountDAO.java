@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class AccountDAO {
-
     public Account create(Account account) throws SQLException {
         String sql = """
                 INSERT INTO accounts (customer_id, account_type, balance, pin)
@@ -133,5 +132,7 @@ public class AccountDAO {
 
 
         return new SavingsAccount(id, customerId, balance, pin, createdAt);
+
+
     }
 }
