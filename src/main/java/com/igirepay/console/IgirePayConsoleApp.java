@@ -10,7 +10,6 @@ import com.igirepay.model.Customer;
 import com.igirepay.model.Transaction;
 import com.igirepay.report.TransactionReportService;
 import com.igirepay.service.PaymentService;
-
 import java.nio.file.Path;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -20,7 +19,6 @@ import java.util.Scanner;
 
 
 public class IgirePayConsoleApp {
-
     private final PaymentService paymentService = new PaymentService();
     private final TransactionReportService reportService = new TransactionReportService();
     private final Scanner scanner = new Scanner(System.in);
@@ -152,6 +150,8 @@ public class IgirePayConsoleApp {
         }
     }
 
+
+
     private void registerCustomer() throws SQLException {
         String name = readLine("Full name: ");
         String email = readLine("Email: ");
@@ -179,6 +179,7 @@ public class IgirePayConsoleApp {
         System.out.println("Customer updated.");
     }
 
+
     private void viewCustomerAccounts() throws SQLException {
         long customerId = readLong("Customer ID: ");
         List<Account> accounts = paymentService.getCustomerAccounts(customerId);
@@ -199,17 +200,16 @@ public class IgirePayConsoleApp {
         System.out.println("Account created: " + account);
     }
 
+
     private void viewBalance() throws SQLException {
         long accountId = readLong("Account ID: ");
         System.out.printf("Balance: %.2f%n", paymentService.getBalance(accountId));
     }
-
     private void deleteInactive() throws SQLException {
         long accountId = readLong("Account ID: ");
         boolean deleted = paymentService.deleteInactiveAccount(accountId);
         System.out.println(deleted ? "Account deleted." : "Account not deleted (must have zero balance and no transactions).");
     }
-
     private void deposit() throws SQLException {
         long accountId = readLong("Account ID: ");
         double amount = readDouble("Amount: ");
@@ -217,7 +217,6 @@ public class IgirePayConsoleApp {
         paymentService.deposit(accountId, amount, ref);
         System.out.println("Deposit successful.");
     }
-
     private void withdraw() throws SQLException {
         long accountId = readLong("Account ID: ");
         double amount = readDouble("Amount: ");
