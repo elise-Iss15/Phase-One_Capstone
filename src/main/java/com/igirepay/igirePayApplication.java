@@ -7,14 +7,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class igirePayApplication extends Application {
-
-    // Single persistent database state connector instance shared smoothly across windows
     private final PaymentService service = new PaymentService();
-
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/igirepay/login-view.fxml"));
