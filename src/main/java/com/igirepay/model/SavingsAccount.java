@@ -2,7 +2,6 @@ package com.igirepay.model;
 
 import com.igirepay.exception.InsufficientBalanceException;
 import com.igirepay.exception.InvalidAmountException;
-
 import java.time.LocalDateTime;
 
 public class SavingsAccount extends Account {
@@ -10,14 +9,13 @@ public class SavingsAccount extends Account {
     private static final double WITHDRAWAL_FEE_RATE = 0.01;
     private static final double MAX_SINGLE_WITHDRAWAL = 500000;
     private int withdrawalsThisMonth;
-
     public SavingsAccount() {
         super();
     }
-
     public SavingsAccount(long id, long customerId, double balance, int pin, LocalDateTime createdAt) {
         super(id, customerId, balance, pin, createdAt);
     }
+
 
     @Override
     public AccountType getAccountType() {

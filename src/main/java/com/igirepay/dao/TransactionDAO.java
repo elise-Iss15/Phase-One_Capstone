@@ -3,7 +3,6 @@ package com.igirepay.dao;
 import com.igirepay.db.DatabaseConnection;
 import com.igirepay.model.Transaction;
 import com.igirepay.model.TransactionType;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

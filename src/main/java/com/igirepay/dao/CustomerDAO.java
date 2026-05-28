@@ -2,7 +2,6 @@ package com.igirepay.dao;
 
 import com.igirepay.db.DatabaseConnection;
 import com.igirepay.model.Customer;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,6 +53,8 @@ public class CustomerDAO {
             }
         }
         return list;
+
+
     }
 
     public boolean update(Customer customer) throws SQLException {

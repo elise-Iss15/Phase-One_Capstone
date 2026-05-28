@@ -23,11 +23,11 @@ Backend Phase 1 Capstone — secure desktop payment platform using **JavaFX**, *
 
 1. Create database:
    ```bash
-   createdb -U postgres igirepay
+   createdb -U postgres Igiredb
    ```
 2. Apply schema:
    ```bash
-   psql -U postgres -d igirepay -f sql/schema.sql
+   psql -U postgres -d Igiredb -f sql/schema.sql
    ```
 3. Copy `src/main/resources/application.properties.example` to `application.properties` and set your credentials.
 
@@ -56,12 +56,7 @@ Every deposit, withdrawal, or transfer requires a unique **reference ID**. The f
 ## Git workflow (Lab 3.5)
 
 ```bash
-git checkout -b feature/customer-crud
+git checkout -b feature/model
 # ... work, commit ...
-git push -u origin feature/customer-crud
-gh pr create --title "Add customer CRUD" --body "..."
+git push -u origin feature/dao
 ```
-
-## Submission
-
-Push to GitHub and submit the repository link with a short demo of console flows: register customer, open wallet, deposit, transfer with reference ID, retry duplicate (rejected).
