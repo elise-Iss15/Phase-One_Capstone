@@ -1,5 +1,4 @@
 package com.igirepay.dao;
-
 import com.igirepay.db.DatabaseConnection;
 import com.igirepay.model.Customer;
 
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class CustomerDAO {
-
     public Customer create(Customer customer) throws SQLException {
         String sql = "INSERT INTO customers (full_name, email, phone_number) VALUES (?, ?, ?) RETURNING id";
         try (Connection conn = DatabaseConnection.getConnection();
@@ -55,7 +53,6 @@ public class CustomerDAO {
         }
         return list;
     }
-
     public boolean update(Customer customer) throws SQLException {
         String sql = "UPDATE customers SET full_name = ?, email = ?, phone_number = ? WHERE id = ?";
         try (Connection conn = DatabaseConnection.getConnection();

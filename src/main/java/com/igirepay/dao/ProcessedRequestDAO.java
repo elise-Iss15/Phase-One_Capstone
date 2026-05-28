@@ -9,7 +9,6 @@ import java.sql.SQLException;
 
 
 public class ProcessedRequestDAO {
-
     public boolean exists(String referenceId) throws SQLException {
         String sql = "SELECT 1 FROM processed_requests WHERE reference_id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
